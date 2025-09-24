@@ -1,10 +1,9 @@
 'use client'
 import React,{useState} from "react";
 import Lookup from "../_data/Lookup";
-import { Button } from "../../components/ui/Button";
+import { Button } from "../../components/ui/Button.jsx";
 import Link from "next/link";
 function Hero() {
-  // const [title, setTitle] = useState("");
   return (
     <div className="flex items-center mt-24 flex-col gap-5">
       <h2 className="text-primary text-5xl text-center font-bold">
