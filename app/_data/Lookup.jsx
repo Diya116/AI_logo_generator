@@ -1,14 +1,14 @@
 export default{
-    HeroHeading:'AI Logo Maker',
-    HeroSubheading:'Perfect Logos for Apps,Buisness,and websites',
+    HeroHeading:'The Ultimate AI Logo Maker',
+    HeroSubheading:'Create Logos with AI Logo Generator',
     HeroDesc:"Craft unique and professional logos effortlessly",
     InputTitlePlaceholder:'Enter your Logo Name',
     LogoTitle:'Logo Title',
     LogoTitleDesc:'Enter your Logo Title',
     LogoDescTitle:"Describe your logo vision",
     LogoDescDesc:'share your idea,thems or inspiration that perfectly represent your brand or project',
-    HeroHeading:'AI Logo Maker',
-    HeroSubheading:'Perfect Logos for Apps, Businesses, and Websites',
+    // HeroHeading:'AI Logo Maker',
+    // HeroSubheading:'Perfect Logos for Apps, Businesses, and Websites',
     HeroDesc:'Craft unique and professional logos effortlessly with our AI-powered tool. Perfect for apps, businesses, websites, and more!',
     InputTitlePlaceholder:'Enter your Logo Name',
     LogoTitle:'Logo Title',
@@ -28,7 +28,7 @@ export default{
     pricingOption : [
         {
             title: 'Free',
-            icon: '/free.png', // Add your free plan icon here
+            icon: '🆓', // Add your free plan icon here
             features: [
                 '⚫ Generate unlimited logos for free',
                 '⚫ Longer wait times',
@@ -40,7 +40,7 @@ export default{
         },
         {
             title: 'Premium',
-            icon: '/thunder.png', // Add your premium plan icon here
+            icon: '🪙', // Add your premium plan icon here
             features: [
                 '⚫ Generate unlimited logos',
                 '⚫ Shorter wait times',
@@ -48,7 +48,7 @@ export default{
                 '⚫ Only 5 Credits',
                 
             ],
-            button:'Generate Free'
+            button:'Generate For 1 Credit'
         }
     ],
 }
