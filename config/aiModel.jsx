@@ -60,3 +60,55 @@ export async function generateFinalprompt(prompt) {
     throw error;
   }
 }
+
+export async function generateLogo(prompt) {
+  try {
+    const response = await fetch(
+      "https://api-inference.huggingface.co/models/black-forest-labs/FLUX.1-schnell",
+      {
+        headers: {
+          Authorization: `Bearer ${process.env.NEXT_PUBLIC_HF_TOKEN}`,
+          "Content-Type": "application/json",
+        },
+        method: "POST",
+        body: JSON.stringify({
+          inputs: prompt,
+          parameters: {
+            guidance_scale: 7.5,
+            num_inference_steps: 20,
+          }
+        }),
+      }
+    );
+
+    if (!response.ok) {
+      const errorText = await response.text();
+      throw new Error(`HuggingFace API Error: ${response.status} - ${errorText}`);
+    }
+
+    // Handle potential JSON response (model loading, etc.)
+    const contentType = response.headers.get('content-type');
+    if (contentType && contentType.includes('application/json')) {
+      const jsonResponse = await response.json();
+      
+      if (jsonResponse.error) {
+        throw new Error(`HuggingFace Error: ${jsonResponse.error}`);
+      }
+      
+      if (jsonResponse.estimated_time) {
+        // Wait for model to load and retry
+        await new Promise(resolve => setTimeout(resolve, jsonResponse.estimated_time * 1000));
+        return generateLogo(prompt); // Recursive retry
+      }
+      
+      throw new Error("Unexpected JSON response from HuggingFace");
+    }
+
+    const imageBuffer = await response.arrayBuffer();
+    return Buffer.from(imageBuffer);
+
+  } catch (error) {
+    console.error("Error generating logo:", error);
+    throw error;
+  }
+}

@@ -38,17 +38,17 @@ export default{
             ],
             button:'Generate Free'
         },
-        {
-            title: 'Premium',
-            icon: '🪙', // Add your premium plan icon here
-            features: [
-                '⚫ Generate unlimited logos',
-                '⚫ Shorter wait times',
-                '⚫ Wait time: Less than 10 seconds',
-                '⚫ Only 5 Credits',
+        // {
+        //     title: 'Premium',
+        //     icon: '🪙', // Add your premium plan icon here
+        //     features: [
+        //         '⚫ Generate unlimited logos',
+        //         '⚫ Shorter wait times',
+        //         '⚫ Wait time: Less than 10 seconds',
+        //         '⚫ Only 5 Credits',
                 
-            ],
-            button:'Generate For 1 Credit'
-        }
+        //     ],
+        //     button:'Generate For 1 Credit'
+        // }
     ],
 }
